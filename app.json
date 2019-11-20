@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/editpwd",
+    "pages/login/index",
+    "pages/my/index",
+    "pages/my/user",
+    "pages/my/member",
+    "pages/my/income",
+    "pages/my/balance",
+    "pages/my/about",
+    "pages/my/info",
+    "pages/user/add",
+    "pages/user/edit",
+    "pages/user/look",
+    "pages/balance/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "麻将记分后台",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#888888",
+    "selectedColor": "#09BB07",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/indexSelected.png"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "text": "我的",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/mySelected.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "permission": {},
+  "sitemapLocation": "sitemap.json",
+  "navigateToMiniProgramAppIdList": []
+}

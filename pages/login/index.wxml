@@ -1,0 +1,21 @@
+<i-row class="iRow"><i-col span="24" i-class="col-space"></i-col></i-row>
+<i-row class="iRow"><i-col span="24">
+  <view class='logo'><image src="{{logo}}"></image></view>
+</i-col></i-row>
+<i-row class="iRow"><i-col span="24" i-class="col-space"></i-col></i-row>
+<i-row class="iRow">
+  <i-col span="3"><image class="icon" src="{{yonghu}}"></image></i-col>
+  <i-col span="3"><view class="titleNameP"><view  class="titleName">账号</view></view></i-col>
+  <i-col span="18"><view class='content'><input class='mobile' type="number" maxlength="11" placeholder="请输入手机号" bindinput='mobileInput' value='{{mobile}}' /></view></i-col>
+  </i-row>
+<i-row class="iRow"><i-col span="24" i-class="col-space1"></i-col></i-row>
+<i-row class="iRow">
+  <i-col span="3"><image class="icon" src="{{lock}}"></image></i-col>
+  <i-col span="3"><view class="titleNameP"><view  class="titleName">密码</view></view></i-col>
+  <i-col span="18"><view class='content'><input class='passwd' type="password" maxlength="15" placeholder="请输入密码" bindinput='passwdInput' value='{{passwd}}' /></view></i-col>
+</i-row>
+<i-row class="iRow"><i-col span="24" i-class="col-space"></i-col></i-row>
+<i-row class="iRow"><i-col span="24">
+  <view class='btnP'><button  class='btn' type='primary'  lang="zh_CN" bindtap="login">登录</button></view>
+</i-col><i-col span="1"></i-col></i-row>
+<i-row class="iRow"><i-col span="24" i-class="col-space"></i-col></i-row>

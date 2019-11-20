@@ -1,0 +1,48 @@
+
+
+.titleName{
+  color:#8f8f8f;
+  font-size: 16px;
+  padding-top:10px;
+}
+
+.titleNameP{
+  height:40px;
+}
+
+.col-space{
+  background-color: #f8f8f9;
+  height:16px;
+}
+
+.col-space1{
+  border-top:1px solid #cfcfcf;
+}
+
+
+.content{
+  text-align: right;
+}
+.logo{
+  text-align: center;
+}
+.logo image{
+  border: 0px;
+  border-radius: 50px;
+  width: 80px;
+  height: 80px;
+}
+
+.icon{
+  width: 40px;height: 40px;
+}
+
+input{
+  width: 90%;height: 40px;
+}
+
+.btnP{
+  text-align: center;
+  padding-left:10px;
+  padding-right: 10px;
+}

@@ -1,0 +1,23 @@
+/**index.wxss**/
+@import "../../css/sunshine.wxss";
+
+.col-space{
+  background-color: #f8f8f9;
+  height:16px;
+}
+.col-first{
+  height: 40px;
+  padding-top:5px;
+}
+.weclome{
+  color:#8f8f8f;
+  padding-left:10px;
+  font-size: 16px;
+}
+
+.updpwd{
+  text-align: right;
+  padding-right: 10px;
+  color:#576B95;
+  font-size: 16px;
+}
