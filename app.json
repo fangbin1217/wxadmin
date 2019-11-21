@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/index/editpwd",
     "pages/login/index",
     "pages/my/index",
     "pages/my/user",

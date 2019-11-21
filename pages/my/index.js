@@ -1,66 +1,51 @@
-// pages/my/index.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    userInfo:null,
+    userIcon: '../../images/user.png',
+    balanceIcon: '../../images/balance.png',
+    guanyuIcon: '../../images/guanyu.png',
+    memberIcon: '../../images/member.png',
+    bannerIcon: '../../images/banner.png',
+    meIcon: '../../images/me.png',
+    youIcon: '../../images/you.png'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+    this.setData({
+      userInfo: app.globalData.userInfo
+    });
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (!this.data.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo
+      });
+    }
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  jumpUserindex: function() {
+    wx.navigateTo({ url: "/pages/my/user" });
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  jumpMyabout: function() {
+    wx.navigateTo({ url: "/pages/my/about" });
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  jumpLogin: function () {
+    wx.navigateTo({ url: "/pages/login/index" });
   }
-})
+
+
+});

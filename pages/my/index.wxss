@@ -1,1 +1,49 @@
-/* pages/my/index.wxss */
+.col-space{
+  background-color: #f8f8f9;
+  height:16px;
+}
+.col-first{
+  height: 60px;
+}
+
+
+.myIcon {
+  padding-top:14px;
+  text-align:left;
+  padding-left:5px;
+}
+.youIcon {
+  padding-top:14px;
+  text-align:right;
+  padding-right:5px;
+}
+.myTitle{
+    font-size:18px;
+    color:#8f8f8f;
+    padding-top:20px;
+}
+
+
+.btn{
+  width: 90%;height: 40px;
+}
+
+.btnP{
+  text-align: center;
+  padding-left:10px;
+  padding-right: 10px;
+}
+
+.col-space2{
+  background-color: #f8f8f9;
+  height:200px;
+}
+
+.myIcon image{
+    width:32px;height:32px;
+}
+
+.youIcon image{
+    width:32px;height:32px;
+}
+

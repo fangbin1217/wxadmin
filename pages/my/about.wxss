@@ -1,1 +1,30 @@
-/* pages/my/about.wxss */
+.myqrcode image{
+  width:128px;height:128px;
+  border-radius: 30px;
+}
+
+.mytitle{
+  font-size: 20px;
+  margin-top:10px;
+  color:#888888;
+}
+
+.mytitle2{
+  font-size: 14px;
+  margin-top:10px;
+  color:#888888;
+}
+
+.myteam{
+  font-size: 20px;
+  margin-top:20px;
+  color:#888888;
+  font-size:14px;
+}
+.myqrcode2{
+  marign-top:20px;
+}
+.myqrcode2 image{
+  width:180px;height:180px;
+  border-radius: 30px;
+}

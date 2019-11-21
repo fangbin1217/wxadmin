@@ -1,7 +1,45 @@
 <view wx:if="{{userInfo}}">
   <view wx:if="{{about}}">
+    <i-notice-bar icon="systemprompt" loop speed="1500">{{userInfo.notice_admin}}</i-notice-bar>
+    <i-row class="iRow">
+      <i-col span="16" i-class="col-first"><view class='weclome'>{{about.weclome}}</view></i-col>
+      <i-col span="8" i-class="col-first" bindtap="handleOpen5"><view class='updpwd'>修改密码</view></i-col>
+    </i-row>
     <i-row class="iRow"><i-col span="24" i-class="col-space"></i-col></i-row>
-<i-row class="iRow"><i-col span="16" i-class="col-first"><view class='weclome'>{{about.weclome}}</view></i-col>
-<i-col span="8" i-class="col-first"><view class='updpwd'>修改密码</view></i-col></i-row>
+    <view wx:if="{{userInfo.is_admin}}">
+      <i-row class="iRow">
+        <i-col span="12" i-class="indexTitle">昨日毛收益（元）</i-col>
+        <i-col span="12" i-class="indexTitle">累计毛收益（元）</i-col>
+      </i-row>
+      <i-row class="iRow">
+        <i-col span="12" i-class="indexValue">{{about.yestodayBannerIncome}}</i-col>
+        <i-col span="12" i-class="indexValue">{{about.totalBannerIncome}}</i-col>
+      </i-row>
+    </view>
+    <i-row class="iRow">
+      <i-col span="12" i-class="indexTitle">昨日净收益（元）</i-col>
+      <i-col span="12" i-class="indexTitle">累计净收益（元）</i-col>
+    </i-row>
+    <i-row class="iRow">
+      <i-col span="12" i-class="indexValue">{{about.yestodayIncome}}</i-col>
+      <i-col span="12" i-class="indexValue">{{about.totalIncome}}</i-col>
+    </i-row>
+    <i-row class="iRow"><i-col span="24" i-class="col-space"></i-col></i-row>
+    <i-row class="iRow"><i-col span="24" i-class="listTitle">近一周数据</i-col></i-row>
+    <i-row class="iRow"><i-col span="24">    
+      <canvas canvas-id="yueEle" style="width:{{width}}px;height:{{height}}px;"></canvas>
+    </i-col></i-row>
+    <i-row class="iRow"><i-col span="24" i-class="col-space"></i-col></i-row>
+    <i-modal title="修改密码" visible="{{ visible5 }}" actions="{{ actions5 }}" bind:click="handleClick5">
+    <view><input class='input-radius' type="password" maxlength="15" placeholder="请输入原密码" placeholder-style='color:#bbbec4;font-size:16px;text-align:center;' value="{{oldPwd}}" bindinput='oldPwd' /></view>
+    <br/>
+    <view><input class='input-radius2' type="password" maxlength="15" placeholder="请输入新密码" placeholder-style='color:#bbbec4;font-size:16px;text-align:center;' value="{{newPwd}}" bindinput='newPwd' /></view>
+</i-modal>
   </view>
+</view>
+<view wx:else>
+<i-row class="iRow"><i-col span="24" i-class="col-space2"></i-col></i-row>
+<i-row class="iRow"><i-col span="24">
+  <view class='btnP'><button  class='btn' type='primary'  lang="zh_CN" bindtap="jumpLogin">重新登录</button></view>
+</i-col></i-row>
 </view>

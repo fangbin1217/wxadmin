@@ -1,2 +1,15 @@
-<!--pages/my/user.wxml-->
-<text>pages/my/user.wxml</text>
+    <i-row class="iRow"><i-col span="24" i-class="col-space"></i-col></i-row>
+    <i-row class="iRow">
+      <i-col span="12" i-class="indexTitle">昨日用户数（人）</i-col>
+      <i-col span="12" i-class="indexTitle">累计用户数（人）</i-col>
+    </i-row>
+    <i-row class="iRow">
+      <i-col span="12" i-class="indexValue">{{about.yestodayUsers}}</i-col>
+      <i-col span="12" i-class="indexValue">{{about.totalUsers}}</i-col>
+    </i-row>
+    <i-row class="iRow"><i-col span="24" i-class="col-space"></i-col></i-row>
+    <i-row class="iRow"><i-col span="24" i-class="listTitle">近一周数据</i-col></i-row>
+    <i-row class="iRow"><i-col span="24">    
+      <canvas canvas-id="yueEle" style="width:{{width}}px;height:{{height}}px;"></canvas>
+    </i-col></i-row>
+    <i-row class="iRow"><i-col span="24" i-class="col-space"></i-col></i-row>

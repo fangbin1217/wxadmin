@@ -1,66 +1,123 @@
-// pages/my/user.js
+const app = getApp();
+var wxCharts = require('../../utils/wxcharts.js');
+var yuelineChart = null;
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    about: null,
+    width: 320,
+    height: 200,
+    isPullDownRefresh: false
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  onLoad: function (option) {
 
+    var windowWidth = 320;
+    var windowHeight = 200;
+    try {
+      var res = wx.getSystemInfoSync();
+      windowWidth = res.windowWidth;
+      windowHeight = res.windowHeight;
+    } catch (e) {
+      console.log('getSystemInfoSync failed!');
+    }
+    windowHeight = Math.round(windowHeight * 0.62);
+    this.setData({
+      width: windowWidth,
+      height: windowHeight
+    })
+    this.indexInit();
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
-
+    if (app.globalData.isRefresh) {
+      console.log(1);
+      app.globalData.isRefresh = false;
+      this.indexInit();
+    }
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  onPullDownRefresh: function (e) {
+    this.setData({
+      isPullDownRefresh: true
+    })
+    this.getData();
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  indexInit: function () {
+    this.getData();
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
+  getData: function () {
+    var access_token = wx.getStorageSync('access_token') || ''
+    wx.request({
+      url: app.globalData.serverHost + 'member/userindex', //概况
+      method: 'post',
+      data: { access_token: access_token, admin: 1 },
+      success: res => {
+        wx.hideLoading();
+        var ret = res.data;
+        if (ret.code == 0) {
+          console.log(ret.data)
+          this.setData({
+            about: ret.data
+          })
+          this.draw(ret.data.lastWeekX, ret.data.lastWeekY);
 
+        } else if (ret.code == 101) {  //如果access_token过期，则重新登录
+          app.jumpLogin('登录过期！', 1);
+        }
+      },
+      fail: () => {
+        wx.hideLoading();
+        // 这里调用你想设置的提示, 比如展示一个页面，一个toast提示
+        app.jumpLogin('登录超时！', 1);
+      },
+      complete: () => {
+        if (this.data.isPullDownRefresh) {
+          wx.stopPullDownRefresh();
+        }
+      }
+    })
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  jumpLogin: function () {
+    wx.navigateTo({ url: "/pages/login/index" });
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
+  draw: function (xList, yList) { //当月用电触摸显示
+    var series = [];
+    var tmp = {
+      name: '用户访问折线图',
+      data: yList,
+      format: function (val, name) {
+        return val;
+      }
+    };
+    series.push(tmp);
 
+    yuelineChart = new wxCharts({ //当月用电折线图配置
+      canvasId: 'yueEle',
+      type: 'area',
+      categories: xList, //categories X轴
+      animation: true,
+      series: series,
+      xAxis: {
+        disableGrid: true
+      },
+      yAxis: {
+        title: '人',
+        format: function (val) {
+          return val;
+        }
+      },
+      width: this.data.width,
+      height: this.data.height,
+      dataLabel: false,
+      dataPointShape: true,
+      extra: {
+        lineStyle: 'curve',
+      }
+    });
   }
+
 })
