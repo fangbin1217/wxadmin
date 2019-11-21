@@ -3,6 +3,6 @@
   <view  class='myqrcode'> <image src="{{logo}}"></image></view>
   <view class='mytitle'>{{version}}</view>
   <view class='myteam'>本小程序由【恭喜发财】团队提供</view>
-  <view class='mytitle2'>如有疑问请联系我</view>
-  <view  class='myqrcode2'> <image src="{{logo2}}"></image></view>
+  <view class='mytitle2'>如有疑问请联系管理员</view>
+  <view  class='myqrcode2'> <image bindtap="downloadImg" data-url="{{logo2}}" src="{{logo2}}"></image></view>
 </view>

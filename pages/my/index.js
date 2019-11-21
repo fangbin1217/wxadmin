@@ -43,6 +43,10 @@ Page({
     wx.navigateTo({ url: "/pages/my/about" });
   },
 
+  jumpUsermember: function() {
+    wx.navigateTo({ url: "/pages/my/member" });
+  },
+
   jumpLogin: function () {
     wx.navigateTo({ url: "/pages/login/index" });
   }

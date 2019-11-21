@@ -1,1 +1,84 @@
-/* pages/my/member.wxss */
+.col-spacetop{
+  height:20px;
+}
+.col-space{
+  background-color: #f8f8f9;
+  height:16px;
+}
+.col-space3{
+  height:10px;
+}
+
+.col-first{
+  height: 40px;
+  padding-top:10px;
+}
+
+.addMember{
+  text-align: right;
+  padding-right: 10px;
+  color:#576B95;
+  font-size: 16px;
+}
+
+.btn{
+  width: 90%;height: 40px;
+}
+
+.btnP{
+  text-align: center;
+  padding-left:10px;
+  padding-right: 10px;
+}
+
+.col-space2{
+  background-color: #f8f8f9;
+  height:200px;
+}
+
+.indexTitle{
+  font-size: 16px;
+  color: #90EE90;
+  padding-top:10px;
+  text-align: center;
+}
+
+.indexValue{
+  font-size: 14px;
+  color: #1f1f1f;
+  padding-top:10px;
+  text-align: center;
+}
+
+.indexTitle2{
+  font-size: 16px;
+  color: #8f8f8f;
+  padding-left:10px;
+}
+
+.listTitle {
+  font-size: 16px;
+  color: #8f8f8f;
+  padding-top:10px;
+  padding-bottom:20px;
+  padding-left:30px;
+}
+
+.input-radius{
+  border-bottom: 1px solid #cfcfcf;
+  height:30px;
+}
+
+.input-radius2{
+  height:40px;
+}
+
+.myIcon {
+  text-align:right;
+  padding-right:10px;
+  padding-top:10px;
+}
+
+.myIcon image{
+    width:18px;height:18px;
+}

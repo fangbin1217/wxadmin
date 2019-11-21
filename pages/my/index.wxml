@@ -13,7 +13,7 @@
     </i-row>
     <view wx:if="{{userInfo.is_admin}}">
       <i-row class="iRow"><i-col span="24" i-class="col-space"></i-col></i-row>
-      <i-row class="iRow">
+      <i-row class="iRow" bindtap="jumpUsermember">
         <i-col span="4" i-class="col-first"><view class='myIcon'><image src="{{memberIcon}}"></image></view></i-col>
         <i-col span="16" i-class="col-first"><view class='myTitle'>会员概况</view></i-col>
         <i-col span="4" i-class="col-first"><view class='youIcon'><image src="{{youIcon}}"></image></view></i-col>

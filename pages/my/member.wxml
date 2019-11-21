@@ -1,2 +1,27 @@
-<!--pages/my/member.wxml-->
-<text>pages/my/member.wxml</text>
+<i-row class="iRow">
+      <i-col span="24" i-class="col-first" bindtap="handleOpen5"><view class='addMember'>新增会员</view></i-col>
+    </i-row>
+    <i-row class="iRow"><i-col span="24" i-class="col-space"></i-col></i-row>
+    <i-row class="iRow">
+      <i-col span="24" i-class="indexTitle">会员总数（人）</i-col>
+    </i-row>
+    <i-row class="iRow">
+      <i-col span="24" i-class="indexValue">{{memberCount}}</i-col>
+    </i-row>
+    <i-row class="iRow">
+      <i-col span="24" i-class="indexTitle2">会员列表</i-col>
+    </i-row>
+    <view wx:if="{{memberList}}">
+      <i-row class="iRow" wx:for="{{memberList}}" wx:key="id" wx:for-index="index">
+        <i-col span="4" i-class="indexValue">ID:{{item.id}}</i-col>
+        <i-col span="12" i-class="indexValue">{{item.mobile}}</i-col>
+        <i-col span="8"><view class='myIcon'><image src="{{bannerIcon}}"></image></view></i-col>
+      </i-row>
+      <i-row class="iRow"><i-col span="24" i-class="col-space3"></i-col></i-row>
+      <i-page current="{{ current }}" total="{{ total }}" bind:change="handleChange">
+        <view slot="prev">Prev</view>
+        <view slot="next">Next</view>
+      </i-page>
+    </view>
+
+    <i-row class="iRow"><i-col span="24" i-class="col-space"></i-col></i-row>
