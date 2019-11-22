@@ -72,7 +72,7 @@ Page({
         // 这里调用你想设置的提示, 比如展示一个页面，一个toast提示
         wx.showToast({
           title: '查询超时！',
-          image: this.globalData.image_warning,
+          image: app.globalData.image_warning,
           duration: 1200,
           mask: true
         });

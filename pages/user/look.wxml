@@ -1,2 +1,43 @@
-<!--pages/user/look.wxml-->
-<text>pages/user/look.wxml</text>
+<view wx:if="{{member}}">
+    <i-row class="iRow">
+      <i-col span="8" i-class="col-first"><view class='memberTitle'>基础信息</view></i-col>
+      <i-col span="16" i-class="col-first"><view class='goIndex' bindtap="goHome"><image  src="../../images/home.png"></image></view></i-col>
+    </i-row>
+    <i-row class="iRow"><i-col span="24" i-class="col-line"></i-col></i-row>
+    <i-row class="iRow">
+      <i-col span="8" i-class="indexTitle">会员编号</i-col>
+      <i-col span="16" i-class="indexTitle">手机号</i-col>
+    </i-row>
+    <i-row class="iRow"><i-col span="24" i-class="col-space"></i-col></i-row>
+    <i-row class="iRow">
+      <i-col span="8" i-class="indexValue2">{{member.id}}</i-col>
+      <i-col span="16" i-class="indexValue2">{{member.mobile}}</i-col>
+    </i-row>
+    <i-row class="iRow"><i-col span="24" i-class="col-space"></i-col></i-row>
+    <i-row class="iRow"><i-col span="24" i-class="indexValue3">记分二维码（点击可下载）</i-col></i-row>
+    <i-row class="iRow"><i-col span="24">
+        <view  class='myqrcode2' wx:if="{{member.qrcode}}"><image bindtap="downloadImg" data-url="{{member.qrcode}}" src="{{member.qrcode}}" binderror='errorImage'></image></view>
+    </i-col></i-row>
+    <i-row class="iRow"><i-col span="24" i-class="col-line"></i-col></i-row>
+    <i-row class="iRow"><i-col span="24" i-class="col-space"></i-col></i-row>
+    <i-row class="iRow">
+          <i-col span="24" i-class="col-first"><view class='memberTitle'>账号信息</view></i-col>
+    </i-row>
+    <i-row class="iRow" wx:if="{{is_admin}}">
+        <i-col span="8" i-class="indexValue1"><view class='memberTitle2'>分成比例</view></i-col>
+        <i-col span="16" i-class="indexValue2">{{member.percent_name}}</i-col>
+    </i-row>
+    <i-row class="iRow"><i-col span="24" i-class="col-space"></i-col></i-row>
+
+    <i-row class="iRow">
+        <i-col span="8" i-class="indexValue1"><view class='memberTitle2'>收款类型</view></i-col>
+        <i-col span="16" i-class="indexValue2">{{member.type_name}}</i-col>
+    </i-row>
+    <i-row class="iRow"><i-col span="24" i-class="col-space"></i-col></i-row>
+    <i-row class="iRow">
+        <i-col span="8" i-class="indexValue1"><view class='memberTitle2'>收款账号</view></i-col>
+        <i-col span="16" i-class="indexValue2">{{member.alipay_account}}</i-col>
+    </i-row>
+    <i-row class="iRow"><i-col span="24" i-class="col-space"></i-col></i-row>
+</view>
+

@@ -9,7 +9,6 @@
     "pages/my/balance",
     "pages/my/about",
     "pages/my/info",
-    "pages/user/add",
     "pages/user/edit",
     "pages/user/look",
     "pages/balance/index"

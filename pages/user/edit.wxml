@@ -1,2 +1,54 @@
-<!--pages/user/edit.wxml-->
-<text>pages/user/edit.wxml</text>
+<view wx:if="{{member}}">
+    <i-row class="iRow">
+      <i-col span="8" i-class="col-first"><view class='memberTitle'>基础信息</view></i-col>
+      <i-col span="16" i-class="col-first"><view class='goIndex' bindtap="goHome"><image  src="../../images/home.png"></image></view></i-col>
+    </i-row>
+    <i-row class="iRow"><i-col span="24" i-class="col-line"></i-col></i-row>
+    <i-row class="iRow">
+      <i-col span="8" i-class="indexTitle">会员编号</i-col>
+      <i-col span="16" i-class="indexTitle">手机号</i-col>
+    </i-row>
+    <i-row class="iRow"><i-col span="24" i-class="col-space"></i-col></i-row>
+    <i-row class="iRow">
+      <i-col span="8" i-class="indexValue2">{{member.id}}</i-col>
+      <i-col span="16" i-class="indexValue2" wx:if="{{member.mobile}}">{{member.mobile}}</i-col>
+      <i-col span="16" wx:else><input class='mobileInput' type="number" maxlength="11" placeholder="请输入手机号" bindinput='mobileInput' value='{{mobile}}' /></i-col>
+    </i-row>
+    <i-row class="iRow"><i-col span="24" i-class="col-line"></i-col></i-row>
+    <i-row class="iRow"><i-col span="24" i-class="col-space"></i-col></i-row>
+    <i-row class="iRow">
+          <i-col span="24" i-class="col-first"><view class='memberTitle'>账号信息</view></i-col>
+    </i-row>
+    <i-row class="iRow" wx:if="{{is_admin}}">
+        <i-col span="8" i-class="indexValue1"><view class='memberTitle2'>分成比例</view></i-col>
+        <i-col span="16" i-class="indexValue1">
+            <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}">
+             <view class="picker">
+               {{array2[index2]}}
+             </view>
+           </picker>
+        </i-col>
+    </i-row>
+    <i-row class="iRow"><i-col span="24" i-class="col-space"></i-col></i-row>
+
+    <i-row class="iRow">
+        <i-col span="8" i-class="indexValue1"><view class='memberTitle2'>收款类型</view></i-col>
+        <i-col span="16" i-class="indexValue1">
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+             <view class="picker">
+               {{array[index]}}
+             </view>
+           </picker>
+        </i-col>
+    </i-row>
+    <i-row class="iRow"><i-col span="24" i-class="col-space"></i-col></i-row>
+    <i-row class="iRow">
+        <i-col span="8" i-class="indexValue1"><view class='memberTitle2'>收款账号</view></i-col>
+        <i-col span="16"><input class='mobileInput' type="text" placeholder="请输入账号" bindinput='accountInput' value='{{accountValue}}' /></i-col>
+    </i-row>
+    <i-row class="iRow"><i-col span="24" i-class="col-space"></i-col></i-row>
+    <i-row class="iRow"><i-col span="24">
+      <view class='btnP'><button  class='btn' type='primary'  lang="zh_CN" bindtap="updMember">修改</button></view>
+    </i-col></i-row>
+</view>
+

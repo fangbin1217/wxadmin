@@ -49,6 +49,10 @@ Page({
 
   jumpLogin: function () {
     wx.navigateTo({ url: "/pages/login/index" });
+  },
+
+  jumpOneself: function (e) {
+    wx.navigateTo({ url: "/pages/user/look?member_id="+e.currentTarget.dataset.memberid });
   }
 
 

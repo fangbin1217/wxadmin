@@ -1,1 +1,122 @@
-/* pages/user/look.wxss */
+.col-spacetop{
+  height:20px;
+}
+.col-space{
+  background-color: #f8f8f9;
+  height:16px;
+}
+.col-space3{
+  height:10px;
+}
+.col-space4{
+  background-color: #f8f8f9;
+  height:1px;
+}
+
+.col-first{
+  height: 40px;
+  padding-top:10px;
+}
+
+.col-space2{
+  background-color: #f8f8f9;
+  height:200px;
+}
+
+.indexTitle{
+  font-size: 16px;
+  color: #90EE90;
+  padding-top:10px;
+  text-align: center;
+}
+
+.indexValue1{
+  font-size: 18px;
+  color: #1f1f1f;
+  padding-top:10px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.indexValue2{
+  font-size: 18px;
+  color: #1f1f1f;
+  padding-top:10px;
+  text-align: center;
+}
+
+.indexValue3{
+  font-size: 14px;
+  color: #8f8f8f;
+  padding-top:10px;
+  padding-bottom:20px;
+  text-align: center;
+}
+
+.indexValue{
+  font-size: 14px;
+  color: #8f8f8f;
+  padding-top:10px;
+  text-align: center;
+}
+
+.indexTitle2{
+  font-size: 16px;
+  color: #8f8f8f;
+  padding-left:10px;
+}
+
+
+
+.mobileInput{
+    height:40px;
+}
+
+.memberTitle{
+      font-size: 18px;
+      color: #1f1f1f;
+      padding-left:10px;
+      font-weight: 600;
+}
+
+.memberTitle2{
+  font-size: 14px;
+  color: #8f8f8f;
+  text-align: center;
+}
+
+.picker{
+    color:#576B95;
+}
+
+input{
+  border-bottom: 1px solid #cfcfcf;
+  height:40px;
+}
+
+.btnP input{
+  width: 90%;height: 40px;
+}
+
+.btnP{
+  text-align: center;
+  padding-left:10px;
+  padding-right: 10px;
+}
+
+.myqrcode2{
+  marign-top:20px;
+  text-align: center;
+}
+.myqrcode2 image{
+  width:180px;height:180px;
+}
+
+.goIndex image{
+    width:32px;height:32px;
+}
+
+.goIndex{
+    text-align: right;
+    padding-right: 10px;
+}

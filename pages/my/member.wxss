@@ -8,6 +8,10 @@
 .col-space3{
   height:10px;
 }
+.col-space4{
+  background-color: #f8f8f9;
+  height:1px;
+}
 
 .col-first{
   height: 40px;
@@ -43,9 +47,17 @@
   text-align: center;
 }
 
+.indexValue1{
+  font-size: 18px;
+  color: #1f1f1f;
+  padding-top:10px;
+  text-align: center;
+  font-weight: 600;
+}
+
 .indexValue{
   font-size: 14px;
-  color: #1f1f1f;
+  color: #8f8f8f;
   padding-top:10px;
   text-align: center;
 }

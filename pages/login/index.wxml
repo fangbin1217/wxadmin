@@ -17,5 +17,5 @@
 <i-row class="iRow"><i-col span="24" i-class="col-space"></i-col></i-row>
 <i-row class="iRow"><i-col span="24">
   <view class='btnP'><button  class='btn' type='primary'  lang="zh_CN" bindtap="login">登录</button></view>
-</i-col><i-col span="1"></i-col></i-row>
+</i-col></i-row>
 <i-row class="iRow"><i-col span="24" i-class="col-space"></i-col></i-row>

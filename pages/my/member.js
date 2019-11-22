@@ -6,7 +6,8 @@ Page({
     total:1,
     current: 1,
     memberCount:0,
-    bannerIcon:'../../images/banner.png'
+    bannerIcon:'../../images/banner.png',
+    lookIcon: '../../images/user.png'
   },
 
   onLoad: function (option) {
@@ -50,7 +51,7 @@ Page({
         // 这里调用你想设置的提示, 比如展示一个页面，一个toast提示
         wx.showToast({
           title: '查询超时！',
-          image: this.globalData.image_warning,
+          image: app.globalData.image_warning,
           duration: 1200,
           mask: true
         });
@@ -70,6 +71,75 @@ Page({
       });
     }
     this.getData();
+  },
+
+  addMember: function() {
+    var that = this
+    wx.showModal({
+      title: '温馨提示',
+      content: '确定要新增会员吗？',
+      success: function (res) {
+        if (res.confirm) {
+          wx.showLoading({
+            title: '正在保存..',
+          })
+
+          var access_token = wx.getStorageSync('access_token') || '';
+          wx.request({
+            url: app.globalData.serverHost + 'member/createmember', //接口地址
+            method: 'post',
+            data: { access_token: access_token, admin: 1 },
+            success: res => {
+              wx.hideLoading();
+              var ret = res.data;
+              if (ret.code == 0) {
+                wx.showToast({
+                  title: '保存成功！',
+                  duration: 1500,
+                  mask: true
+                })
+                that.setData({
+                  current: 1
+                });
+                that.getData();
+
+              } else if (ret.code == 101) {
+                app.jumpLogin();
+              } else {
+                wx.showToast({
+                  title: ret.msg,
+                  icon: 'none',
+                  image: app.globalData.image_warning,
+                  duration: 1500,
+                  mask: true
+                })
+              }
+
+            },
+            fail: () => {
+              wx.hideLoading();
+              wx.showToast({
+                title: '请求超时！',
+                icon: 'loading',
+                duration: 1500,
+                mask: true
+              })
+            }
+
+          })
+        } else {
+          //console.log('弹框后点取消')
+        }
+      }
+    })
+  },
+
+  editMember: function(e) {
+    wx.navigateTo({ url: "/pages/user/edit?member_id=" + e.currentTarget.dataset.memberid });
+  },
+
+  lookMember: function(e) {
+    wx.navigateTo({ url: "/pages/user/look?member_id=" + e.currentTarget.dataset.memberid });
   }
 
 })
